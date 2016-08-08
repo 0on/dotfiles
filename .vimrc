@@ -70,6 +70,7 @@ set foldenable
 set ignorecase
 set wildignore+=*/bower_components/*,*/node_modules/*
 set noswapfile
+set backspace=indent,eol,start
 :imap jj <Esc>
 
 let g:ctrlp_custom_ignore = {
@@ -85,10 +86,10 @@ cnoreabbrev Ag Ack
 cnoreabbrev AG Ack  
 
 "syntastic config
-let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_debug = 33
+let g:syntastic_auto_loc_list = 0
+" let g:syntastic_debug = 33
 let g:syntastic_javascript_checkers = ["eslint"]
 let g:syntastic_javascript_eslint_exec = 'eslint'
