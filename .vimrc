@@ -64,6 +64,11 @@ set tabstop=2
 set softtabstop=2
 set nu
 set expandtab
+set cursorline
+set foldenable
+set ignorecase
+set wildignore+=*/bower_components/*,*/node_modules/*
+set noswapfile
 :imap jj <Esc>
 
 let g:ctrlp_custom_ignore = {
