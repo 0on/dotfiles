@@ -63,6 +63,7 @@ set shiftwidth=2
 set tabstop=2
 set softtabstop=2
 set nu
+set expandtab
 :imap jj <Esc>
 
 let g:ctrlp_custom_ignore = {
@@ -83,5 +84,5 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_auto_loc_list = 2
 " let g:syntastic_debug = 33
-let g:syntastic_javascript_checkers = ["eslint", "jscs"]
+let g:syntastic_javascript_checkers = ["eslint"]
 let g:syntastic_javascript_eslint_exec = 'eslint_d'
