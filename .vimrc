@@ -33,6 +33,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
 Plugin 'mtscout6/syntastic-local-eslint.vim'
 Plugin 'mattn/emmet-vim'
+Plugin 'jiangmiao/auto-pairs'
 
 let g:jsx_ext_required = 0
 
