@@ -32,6 +32,7 @@ Plugin 'mileszs/ack.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
 Plugin 'mtscout6/syntastic-local-eslint.vim'
+Plugin 'mattn/emmet-vim'
 
 let g:jsx_ext_required = 0
 
