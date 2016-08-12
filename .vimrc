@@ -63,6 +63,8 @@ colorscheme OceanicNext
 " Put your non-Plugin stuff after this line
 map <silent> <C-n> :NERDTreeFocus<CR>
 set hlsearch
+set incsearch
+set showmatch
 set shiftwidth=2
 set tabstop=2
 set softtabstop=2
@@ -76,11 +78,19 @@ set noswapfile
 set backspace=indent,eol,start
 :imap jj <Esc>
 
+" CTRLP config
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.?(git|hg|svn|node_modules)$',
   \ 'file': '\v\.(exe|so|dll)$',
   \ 'link': 'some_bad_symbolic_links',
   \ }
+let g:ctrlp_max_files = 50000
+let g:ctrlp_max_height = 10
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_use_caching = 5000
+let g:ctrlp_cache_dir = '~/.vim/tmp/ctrlp'
+let g:ctrlp_clear_cache_on_exit = 0
+" CTRLP config end
 
 let g:ackprg = 'ag --vimgrep --smart-case'                                                   
 cnoreabbrev ag Ack                                                                           
