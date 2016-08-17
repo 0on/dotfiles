@@ -36,6 +36,7 @@ Plugin 'mattn/emmet-vim'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'ap/vim-css-color'
 Plugin 'udalov/kotlin-vim'
+Plugin 'Yggdroot/indentLine'
 
 let g:jsx_ext_required = 0
 
@@ -107,3 +108,7 @@ let g:syntastic_auto_loc_list = 0
 " let g:syntastic_debug = 33
 let g:syntastic_javascript_checkers = ["eslint"]
 let g:syntastic_javascript_eslint_exec = 'eslint'
+
+" indent lines config
+let g:indentLine_enabled = 1
+"
