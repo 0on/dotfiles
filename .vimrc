@@ -33,7 +33,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
 Plugin 'mtscout6/syntastic-local-eslint.vim'
 Plugin 'mattn/emmet-vim'
-Plugin 'jiangmiao/auto-pairs'
+Plugin 'Raimondi/delimitMate'
 Plugin 'ap/vim-css-color'
 Plugin 'udalov/kotlin-vim'
 
