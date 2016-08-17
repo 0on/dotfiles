@@ -34,7 +34,8 @@ Plugin 'scrooloose/syntastic'
 Plugin 'mtscout6/syntastic-local-eslint.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'skammer/vim-css-color'
+Plugin 'ap/vim-css-color'
+Plugin 'udalov/kotlin-vim'
 
 let g:jsx_ext_required = 0
 
