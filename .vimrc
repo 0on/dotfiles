@@ -77,6 +77,7 @@ set ignorecase
 set wildignore+=*/bower_components/*,*/node_modules/*
 set noswapfile
 set backspace=indent,eol,start
+set autoindent
 :imap jj <Esc>
 
 " CTRLP config
