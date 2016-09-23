@@ -81,6 +81,7 @@ set autoindent
 
 command! Tp execute ":tabnew \| :CtrlP:<CR>"
 command! Tn execute ":tabnew \| :NERDTree"
+command! -nargs=1 Ta tabe | Ack <q-args>
 :imap jj <Esc>
 
 " CTRLP config
