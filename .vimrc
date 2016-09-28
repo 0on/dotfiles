@@ -70,6 +70,7 @@ set shiftwidth=2
 set tabstop=2
 set softtabstop=2
 set nu
+set relativenumber
 set expandtab
 set cursorline
 set foldenable
@@ -79,10 +80,16 @@ set noswapfile
 set backspace=indent,eol,start
 set autoindent
 
+let mapleader = ","
+
 command! Tp execute ":tabnew \| :CtrlP:<CR>"
 command! Tn execute ":tabnew \| :NERDTree"
 command! -nargs=1 Ta tabe | Ack <q-args>
+
 :imap jj <Esc>
+nnoremap <Leader>b :Tp<ENTER>
+nnoremap <Leader>n :Tn<ENTER>
+nnoremap <Leader>m :Ta
 
 " CTRLP config
 let g:ctrlp_custom_ignore = {
