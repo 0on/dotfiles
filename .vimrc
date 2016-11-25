@@ -21,21 +21,31 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'othree/yajs.vim'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'othree/es.next.syntax.vim'
-"Plugin 'maxmellon/vim-jsx-pretty'
+"Plugin 'MaxMEllon/vim-jsx-pretty'
 Plugin 'mxw/vim-jsx'
-"plugin 'altercation/vim-colors-solarized'
 Plugin 'mhartington/oceanic-next'
+Plugin 'YorickPeterse/happy_hacking.vim'
+Plugin 'tyrannicaltoucan/vim-quantum'
+Plugin 'kristijanhusak/vim-hybrid-material'
+Plugin 'rakr/vim-one'
+Plugin 'w0ng/vim-hybrid'
+Plugin 'altercation/vim-colors-solarized'
 Plugin 'ctrlpvim/ctrlp.vim'
 "Plugin 'SuperTab'
 Plugin 'mileszs/ack.vim'
 "Plugin 'wincent/command-t'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/syntastic'
-Plugin 'mtscout6/syntastic-local-eslint.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'Raimondi/delimitMate'
 Plugin 'ap/vim-css-color'
 Plugin 'udalov/kotlin-vim'
+Plugin 'hdima/python-syntax'
+Plugin 'rizzatti/dash.vim'
+Plugin 'Yggdroot/indentLine'
+if version > 701
+  Plugin 'scrooloose/syntastic'
+  Plugin 'mtscout6/syntastic-local-eslint.vim'
+endif
 
 let g:jsx_ext_required = 0
 
@@ -46,11 +56,15 @@ filetype plugin indent on    " required
 "set macligatures
 
 syntax enable
-set background=dark
+set background=light
 set t_Co=256
-colorscheme OceanicNext
-" colorscheme solarized
-
+"colorscheme OceanicNext
+colorscheme solarized
+"colorscheme happy_hacking
+"colorscheme quantum
+"colorscheme hybrid_material
+"colorscheme one
+"colorscheme hybrid
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
 "
@@ -70,7 +84,6 @@ set shiftwidth=2
 set tabstop=2
 set softtabstop=2
 set nu
-set relativenumber
 set expandtab
 set cursorline
 set foldenable
@@ -79,6 +92,10 @@ set wildignore+=*/bower_components/*,*/node_modules/*
 set noswapfile
 set backspace=indent,eol,start
 set autoindent
+
+if version > 702
+  set relativenumber
+endif
 
 let mapleader = ","
 
@@ -111,11 +128,23 @@ cnoreabbrev aG Ack
 cnoreabbrev Ag Ack                                                                           
 cnoreabbrev AG Ack  
 
+" status line setup here 
+:set laststatus=2          " Show statusline
+:set statusline=%f         " Path to the file
+:set statusline+=%h%m      " File status
+:set statusline+=%=        " Switch to the right side
+:set statusline+=%l        " Current line
+:set statusline+=/         " Separator
+:set statusline+=%L        " Total lines
+" end
+
+if version > 702
 "syntastic config
-let g:syntastic_always_populate_loc_list = 0
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_auto_loc_list = 0
-"let g:syntastic_debug = 33
-let g:syntastic_javascript_checkers = ["eslint"]
-let g:syntastic_javascript_eslint_exec = 'eslint'
+  let g:syntastic_always_populate_loc_list = 0
+  let g:syntastic_check_on_open = 1
+  let g:syntastic_check_on_wq = 0
+  let g:syntastic_auto_loc_list = 0
+  "let g:syntastic_debug = 33
+  let g:syntastic_javascript_checkers = ["eslint"]
+  let g:syntastic_javascript_eslint_exec = 'eslint'
+endif
