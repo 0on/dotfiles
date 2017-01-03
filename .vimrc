@@ -42,10 +42,15 @@ Plugin 'udalov/kotlin-vim'
 Plugin 'hdima/python-syntax'
 Plugin 'rizzatti/dash.vim'
 Plugin 'Yggdroot/indentLine'
+"Plugin 'flowtype/vim-flow'
+Plugin 'elixir-lang/vim-elixir'
 if version > 701
   Plugin 'scrooloose/syntastic'
   Plugin 'mtscout6/syntastic-local-eslint.vim'
 endif
+
+"filetype plugin on
+"set omnifunc=syntaxcomplete#Complete
 
 let g:jsx_ext_required = 0
 
