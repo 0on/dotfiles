@@ -113,6 +113,12 @@ nnoremap <Leader>b :Tp<ENTER>
 nnoremap <Leader>n :Tn<ENTER>
 nnoremap <Leader>m :Ta
 
+" nerdcommenter config
+let g:NERDSpaceDelims = 1
+let g:NERDDefaultAlign = 'left'
+let g:NERDTrimTrailingWhitespace = 1
+let g:NERDCompactSexyComs = 1
+
 " CTRLP config
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.?(git|hg|svn|node_modules)$',
