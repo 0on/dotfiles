@@ -18,9 +18,11 @@ Plugin 'VundleVim/Vundle.vim'
 " My pluginc here
 Plugin 'scrooloose/nerdtree'
 "Plugin 'jelera/vim-javascript-syntax'
+
 Plugin 'othree/yajs.vim'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'othree/es.next.syntax.vim'
+
 "Plugin 'MaxMEllon/vim-jsx-pretty'
 Plugin 'mxw/vim-jsx'
 Plugin 'mhartington/oceanic-next'
@@ -41,12 +43,14 @@ Plugin 'ap/vim-css-color'
 Plugin 'udalov/kotlin-vim'
 Plugin 'hdima/python-syntax'
 Plugin 'rizzatti/dash.vim'
-Plugin 'Yggdroot/indentLine'
+" Plugin 'Yggdroot/indentLine'
 "Plugin 'flowtype/vim-flow'
 Plugin 'elixir-lang/vim-elixir'
 if version > 701
   Plugin 'scrooloose/syntastic'
   Plugin 'mtscout6/syntastic-local-eslint.vim'
+  " autocomplete (instal.py!!!)
+  Plugin 'Valloric/YouCompleteMe'
 endif
 
 "filetype plugin on
@@ -107,11 +111,16 @@ let mapleader = ","
 command! Tp execute ":tabnew \| :CtrlP:<CR>"
 command! Tn execute ":tabnew \| :NERDTree"
 command! -nargs=1 Ta tabe | Ack <q-args>
+command! TG execute ":tab split \| :NERDTreeFind \| :wincmd p"
+command! Tg execute ":tab split \| :NERDTreeFind"
 
 :imap jj <Esc>
 nnoremap <Leader>b :Tp<ENTER>
 nnoremap <Leader>n :Tn<ENTER>
 nnoremap <Leader>m :Ta
+nnoremap <Leader>f :NERDTreeFind<CR>
+nnoremap <Leader>g :Tg<ENTER> 
+nnoremap <Leader>G :TG<ENTER> 
 
 " nerdcommenter config
 let g:NERDSpaceDelims = 1
@@ -139,6 +148,8 @@ cnoreabbrev aG Ack
 cnoreabbrev Ag Ack                                                                           
 cnoreabbrev AG Ack  
 
+cnoreabbrev W w  
+
 " status line setup here 
 :set laststatus=2          " Show statusline
 :set statusline=%f         " Path to the file
@@ -149,6 +160,8 @@ cnoreabbrev AG Ack
 :set statusline+=%L        " Total lines
 " end
 
+:set conceallevel=0
+
 if version > 702
 "syntastic config
   let g:syntastic_always_populate_loc_list = 0
@@ -158,4 +171,25 @@ if version > 702
   "let g:syntastic_debug = 33
   let g:syntastic_javascript_checkers = ["eslint"]
   let g:syntastic_javascript_eslint_exec = 'eslint'
+
+  let g:ycm_autoclose_preview_window_after_completion=1
+  set splitbelow
 endif
+
+" human regex search
+nnoremap / /\v
+vnoremap / /\v
+
+" let's disable arrows
+" nnoremap <up> <nop>
+" nnoremap <down> <nop>
+" nnoremap <left> <nop>
+" nnoremap <right> <nop>
+" inoremap <up> <nop>
+" inoremap <down> <nop>
+" inoremap <left> <nop>
+" inoremap <right> <nop>
+
+" <PasteStart> workaround
+" https://github.com/vim/vim/issues/1407
+set t_BE=
