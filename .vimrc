@@ -46,11 +46,14 @@ Plugin 'rizzatti/dash.vim'
 " Plugin 'Yggdroot/indentLine'
 "Plugin 'flowtype/vim-flow'
 Plugin 'elixir-lang/vim-elixir'
+Plugin 'ktmud/perl-tmpl.vim'
+Plugin 'tpope/vim-fugitive'
 if version > 701
-  Plugin 'scrooloose/syntastic'
-  Plugin 'mtscout6/syntastic-local-eslint.vim'
+  " Plugin 'scrooloose/syntastic'
+  " Plugin 'mtscout6/syntastic-local-eslint.vim'
   " autocomplete (instal.py!!!)
   Plugin 'Valloric/YouCompleteMe'
+  Plugin 'w0rp/ale'
 endif
 
 "filetype plugin on
@@ -121,6 +124,12 @@ nnoremap <Leader>m :Ta
 nnoremap <Leader>f :NERDTreeFind<CR>
 nnoremap <Leader>g :Tg<ENTER> 
 nnoremap <Leader>G :TG<ENTER> 
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+let @t = 'A // TODO '
 
 " nerdcommenter config
 let g:NERDSpaceDelims = 1
@@ -164,14 +173,15 @@ cnoreabbrev W w
 
 if version > 702
 "syntastic config
-  let g:syntastic_always_populate_loc_list = 0
-  let g:syntastic_check_on_open = 1
-  let g:syntastic_check_on_wq = 0
-  let g:syntastic_auto_loc_list = 0
-  "let g:syntastic_debug = 33
-  let g:syntastic_javascript_checkers = ["eslint"]
-  let g:syntastic_javascript_eslint_exec = 'eslint'
+  " let g:syntastic_always_populate_loc_list = 0
+  " let g:syntastic_check_on_open = 1
+  " let g:syntastic_check_on_wq = 0
+  " let g:syntastic_auto_loc_list = 0
+  " "let g:syntastic_debug = 33
+  " let g:syntastic_javascript_checkers = ["eslint"]
+  " let g:syntastic_javascript_eslint_exec = 'eslint'
 
+  " autocomlete hint panel
   let g:ycm_autoclose_preview_window_after_completion=1
   set splitbelow
 endif
@@ -193,3 +203,6 @@ vnoremap / /\v
 " <PasteStart> workaround
 " https://github.com/vim/vim/issues/1407
 set t_BE=
+
+" ALE git merge fix
+let g:ale_emit_conflict_warnings=0
