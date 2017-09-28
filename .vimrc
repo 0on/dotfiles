@@ -23,6 +23,7 @@ Plugin 'othree/yajs.vim'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'othree/es.next.syntax.vim'
 
+Plugin 'HerringtonDarkholme/yats.vim'
 "Plugin 'MaxMEllon/vim-jsx-pretty'
 Plugin 'mxw/vim-jsx'
 Plugin 'mhartington/oceanic-next'
@@ -48,6 +49,7 @@ Plugin 'rizzatti/dash.vim'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'ktmud/perl-tmpl.vim'
 Plugin 'tpope/vim-fugitive'
+Plugin 'ElmCast/elm-vim'
 if version > 701
   " Plugin 'scrooloose/syntastic'
   " Plugin 'mtscout6/syntastic-local-eslint.vim'
@@ -181,6 +183,9 @@ if version > 702
   " let g:syntastic_javascript_checkers = ["eslint"]
   " let g:syntastic_javascript_eslint_exec = 'eslint'
 
+  let g:ycm_semantic_trigers = {
+        \ 'elm' : ['.'],
+        \}
   " autocomlete hint panel
   let g:ycm_autoclose_preview_window_after_completion=1
   set splitbelow
