@@ -1,0 +1,20 @@
+
+function _git_c_b() {
+  if [[ $(git_current_branch) ]]; then
+    echo "(%{$fg[blue]%}$(git_current_branch)%{$reset_color%}) "
+  else
+    echo ' '
+  fi;
+}
+export PS1="[%{$fg[red]%}%1d%{$reset_color%}]\$(_git_c_b)> "
+
+
+# iphone check
+alias iphcheck="curl 'http://service.maccentre.ru/status/?id=********&sn=**********' -s | python -mjson.tool | native2ascii -encoding UTF-8 -reverse | grep 'Состояние заказа' -A 1"
+
+alias gcam='git commit -a -m'
+alias gcamn='git commit -a -n -m'
+alias gs='git stash'
+alias gsp='git stash pop'
+
+alias connectvm="ssh name@host -4At 'TERM=xterm-256color tmux attach || TERM=xterm-256color tmux new'"

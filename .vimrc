@@ -138,6 +138,7 @@ let g:NERDSpaceDelims = 1
 let g:NERDDefaultAlign = 'left'
 let g:NERDTrimTrailingWhitespace = 1
 let g:NERDCompactSexyComs = 1
+let NERDTreeShowHidden=1
 
 " CTRLP config
 let g:ctrlp_custom_ignore = {
